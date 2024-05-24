@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account</title>
+    <link rel="stylesheet" href="account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+</head>
+<body>
+    <header>
+        <h1 style="color: grey;">User <span style="color: orangered;">Account</span></h1>
+        <!-- Navigation links -->
+        <nav>
+            <ul>
+                <li><a href="#profile" onclick="showSection('profile')">Profile</a></li>
+                <li><a href="#orders" onclick="showSection('orders')">Orders</a></li>
+                <li><a href="#cart" onclick="showSection('cart')">Cart</a></li>
+                <li><a href="#settings" onclick="showSection('settings')">Settings</a></li>
+                <li><a href="index.html"><i class="fas fa-arrow-left"></i> Back to Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Greeting Section -->
+        <div class="greeting">
+            <p id="greeting"></p>
+        </div>
+
+        <!-- Profile Section -->
+        <section id="profile">
+            <h2><i class="fas fa-user"></i> Profile</h2>
+            <div class="profile-picture">
+                <div class="picture-container">
+                    <img id="profile-picture" src="default-profile-picture.jpg" alt="Profile Picture">
+                    <label for="profile-picture-input" class="upload-label"><i class="fas fa-upload"></i> Upload Picture</label>
+                    <input type="file" id="profile-picture-input" accept="image/*" onchange="previewImage(event)">
+                </div>
+            </div>
+            
+            <!-- Profile details -->
+            <div class="profile-details">
+                <p><strong>Name:</strong> <span id="name">John Doe</span> </p>
+                <p><strong>Email:</strong> <span id="email">john@example.com</span> </p>
+                <p><strong>Phone:</strong> <span id="phone">123-456-7890</span> </p>
+                <p><strong>Address:</strong> <span id="address">123 Main St, City, Country</span> </p>
+            </div>
+            <!-- Edit Profile button -->
+            <button href="#settings" onclick="showSection('settings')">Edit Profile</button>
+        </section>
+
+        <!-- Orders Section -->
+        <section id="orders">
+            <h2><i class="fas fa-shopping-cart"></i> Orders</h2>
+            <!-- List of orders -->
+            <ul class="order-list">
+                <li>Order 1</li>
+                <li>Order 2</li>
+                <li>Order 3</li>
+            </ul>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart">
+            <h2><i class="fas fa-shopping-basket"></i> Cart</h2>
+            <!-- List of items in cart -->
+            <ul class="cart-items">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settings">
+            <h2><i class="fas fa-cog"></i> Settings</h2>
+            <!-- Settings form -->
+            <form class="settings-form">
+                <div class="form-group">
+                    <label for="new-email">New Email:</label>
+                    <input type="email" id="new-email" name="new-email">
+                </div>
+                <div class="form-group">
+                    <label for="new-password">New Password:</label>
+                    <input type="password" id="new-password" name="new-password">
+                </div>
+                <button type="submit">Save Changes</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the current hour
+            var hour = new Date().getHours();
+            // Greet user based on the time of day
+            var greeting = document.getElementById('greeting');
+            var name = 'Paul'; // Replace with the user's name fetched from backend
+            if (hour >= 5 && hour < 12) {
+                greeting.textContent = ' Hello! Good morning, ' + name + '!';
+            } else if (hour >= 12 && hour < 18) {
+                greeting.textContent = 'Hello! Good afternoon, ' + name + '!';
+            } else {
+                greeting.textContent = 'Hello! Good evening, ' + name + '!';
+            }
+        });
+
+        function showSection(sectionId) {
+            // Hide all sections except greeting
+            var sections = document.querySelectorAll('main section:not(.greeting)');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('profile-picture');
+                output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+    </script>
+</body>
+</html>

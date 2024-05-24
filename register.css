@@ -1,0 +1,88 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin: 0;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: cursive;
+}
+
+.register-container {
+    display: ;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.register-form {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 5px;
+    
+}
+
+input{
+    width: 450px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 1s linear ;
+}
+
+
+input:hover{
+    background-color: green;
+    border: none;
+    transition: 1s linear ;
+    box-shadow: 5px 5px 10px orangered;
+
+}
+button[type="submit"] {
+    background-color: green;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(0, 2, 100);
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
