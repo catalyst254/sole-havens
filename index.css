@@ -462,6 +462,7 @@ footer {
     transform: scale(1.05);
 }
 
+/*Trend Section */
 .seasonal-trend {
     padding: 20px;
     background-color: #f9f9f9;
@@ -484,6 +485,7 @@ footer {
     width: 250px;
     text-align: center;
     margin-bottom: 20px;
+    box-shadow: 5px 5px 5px grey;
 }
 
 .trend-item img {
@@ -501,5 +503,25 @@ footer {
 
 .trend-item p {
     font-size: 16px;
-    color: #666;
+    color: #000000;
+}
+
+/* view Section */
+.view{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: orangered;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: cursive;
+    border-radius: 10px;
+    list-style: none;
+    transition: background-color 0.3s;
+}
+
+.view:hover {
+    background-color: green;
+    color: #000000;
+    font-weight: bolder;
 }
