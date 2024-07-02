@@ -1,16 +1,23 @@
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: grey;
+  background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   height: 100vh;
   margin: 0;
 }
 
 h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Brush Script MT', cursive;
+}
+
+h2 {
   font-family: 'Comic Sans MS', cursive, sans-serif;
   color: black;
   text-align: center;
@@ -20,12 +27,14 @@ h1 {
 
 .login-container {
   background-color: transparent;
-  border-radius: 10px;
-  box-shadow: 5px 4px 50px 5px black;
-  padding: 20px;
-  text-align: center;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px black;
+  padding: 30px;
+  border: none;
   width: 100%;
-  margin: 20px;
+  max-width: 500px;
+  margin-bottom: 30px;
 }
 
 .login-forms {
@@ -59,7 +68,7 @@ label {
 input[type="text"],
 input[type="password"],
 input[type="email"] {
-  width: 80%;
+  width: 75%;
   display: block;
   box-shadow: inset 5px 5px 25px rgb(0, 0, 0)
   , inset -5px -5px 40px rgb(255, 255, 255);
@@ -102,9 +111,13 @@ button[type="submit"]:hover {
 }
 
 /* Media Queries for Responsiveness */
-@media (max-width: 600px) {
+@media (max-width: 576px) {
   h1 {
       font-size: 1.5em;
+  }
+  .login-container {
+    padding: 30px;
+    width: 80%;
   }
   .login-container, .login-forms {
       padding: 15px;
