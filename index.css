@@ -75,9 +75,15 @@ nav {
 /*** header***/
 header {
     background-color: #fff;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 5px 5px 10px #000000;
+    color: #333;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 header h1 {

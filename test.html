@@ -3,417 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoleHaven - My Account</title>
+    <title>About Us - SoleHaven</title>
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #333;
-            color: #fff;
-        }
-        nav {
-            background-color: #16018f;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            width: 100%;
-            overflow-x: hidden;
-        }
-
-        .account-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #ff6b6b;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5);
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #ff6b6b;
-        }
-
-        .greeting {
-            position: relative;
-            text-align: center;
-            height: 150px;
-            font-size: 36px;
-            display: flex;
-            justify-content: center;
-            text-shadow: 2px 2px 4px black;
-            margin-bottom: 10px;
-            font-family: cursive; 
-            font-weight: bolder;
-            color: orangered; 
-            background-size: cover;
-            background-position: center;
-            animation: slideshow 20s linear infinite; 
-}
-
-@keyframes slideshow {
-            0% { background-image: url('puma.png'); }
-            25% { background-image: url('adidas.png'); } 
-            50% { background-image: url('louis.png'); }
-            75% { background-image: url('nike.png'); }
-            100% { background-image: url('jordan.png'); } 
-}
-
-        .account-info {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        .info-section {
-            background-color: transparent;
-            padding: 15px;
-            border-radius: 8px;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .info-section:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .info-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #ff6b6b;
-        }
-
-        .info-item {
-            margin-bottom: 8px;
-        }
-
-        .info-label {
-            font-weight: bold;
-            margin-right: 10px;
-            color: #666;
-        }
-
-        .order-history, .cart-items {
-            margin-top: 20px;
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #ff6b6b;
-            color: white;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: #ff6b6b;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            margin-top: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .btn:hover {
-            background-color: #ff4757;
-        }
-
-        .shoe-preferences {
-            margin-top: 20px;
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-        .profile-picture {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        #profile-picture {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .upload-label {
-            display: inline-block;
-            margin-top: 10px;
-            cursor: pointer;
-        }
-
-        #profile-picture-input {
-            display: none;
-        }
-
-        .settings-form .form-group {
-            margin-bottom: 15px;
-        }
-
-        .settings-form label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        h1 {
-            font-family: cursive;
-        }
-        .settings-form input {
-            width: 100%;
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-
-        /* Responsive design */
-        @media screen and (min-width: 768px) {
-            .account-info {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .account-container {
-                padding: 30px;
-            }
-
-            .logo {
-                font-size: 32px;
-            }
-
-            .account-title {
-                font-size: 24px;
-            }
-
-            nav ul li {
-                margin: 15px;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 16px;
-            }
-
-            #profile-picture {
-                width: 150px;
-                height: 150px;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .account-container {
-                margin: 10px;
-                padding: 15px;
-            }
-
-            .logo {
-                font-size: 24px;
-            }
-
-            .account-title {
-                font-size: 20px;
-            }
-
-
-
-            nav ul li {
-                margin: 0 14px;
-            }
-
-            th, td {
-                padding: 8px;
-                font-size: 14px;
-            }
-        }
-    </style>
 </head>
+<style>
+    /* index.css */
+
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.top-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 100px; /* Adjust based on your logo size */
+    height: auto;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+}
+
+.search-bar button {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 8px 12px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-right: 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.main-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-menu li {
+    margin-right: 20px;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.main-menu a:hover {
+    background-color: #f0f0f0;
+    color: #ff5733;
+    border-radius: 5px;
+}
+
+.menu-bars {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+}
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .menu-bars {
+        display: block;
+    }
+
+    .main-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        text-align: center;
+        z-index: 999;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .main-menu.show-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-menu li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .main-menu a {
+        padding: 10px 20px;
+    }
+}
+
+</style>
 <body>
-    <div class="account-container">
-        <div class="account-header">
-            <nav>
-                <h1 >SoleHaven - <span style="color: grey;">User <span style="color: orangered;">Account</span></h1>
-                <ul>
-                    <li><a href="#profile" onclick="showSection('profile')"><i class="fas fa-user"></i> Profile</a></li>
-                    <li><a href="#orders" onclick="showSection('orders')"><i class="fas fa-shopping-cart"></i> Orders</a></li>
-                    <li><a href="#cart" onclick="showSection('cart')"><i class="fas fa-shopping-basket"></i> Cart</a></li>
-                    <li><a href="#settings" onclick="showSection('settings')"><i class="fas fa-cog"></i> Settings</a></li>
-                    <li><a href="index.html"><i class="fas fa-arrow-left"></i> Back to Home</a></li>
-                </ul>
-            </nav>
-        </div>
-        
-        <div class="greeting">
-            <p id="greeting"></p>
-        </div>
-
-        <section id="profile">
-            <div class="profile-picture">
-                <img id="profile-picture" src="default-profile-picture.jpg" alt="Profile Picture">
-                <label for="profile-picture-input" class="upload-label btn"><i class="fas fa-upload"></i> Upload Picture</label>
-                <input type="file" id="profile-picture-input" accept="image/*" onchange="previewImage(event)">
+    <div class="top-bar">
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Shoe Shop Logo">
+                </a>
             </div>
-            
-            <div class="account-info">
-                <div class="info-section">
-                    <div class="info-title">Personal Information</div>
-                    <div class="info-item">
-                        <span class="info-label">Name:</span>
-                        <span id="name">John Doe</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Email:</span>
-                        <span id="email">johndoe@example.com</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Phone:</span>
-                        <span id="phone">+1 (555) 123-4567</span>
-                    </div>
-                </div>
-                <div class="info-section">
-                    <div class="info-title">Shipping Address</div>
-                    <div class="info-item">
-                        <span class="info-label">Address:</span>
-                        <span id="address">123 Shoe Lane</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">City:</span>
-                        <span>Sneakerville</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Zip Code:</span>
-                        <span>12345</span>
-                    </div>
-                </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for shoes...">
+                <button type="submit"><i class="fa fa-search"></i></button>
             </div>
-
-        </section>
-
-        <section id="orders" style="display: none;">
-            <h2>Order History</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Order ID</th>
-                        <th>Date</th>
-                        <th>Total</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>#1001</td>
-                        <td>2023-06-15</td>
-                        <td>$159.99</td>
-                        <td>Delivered</td>
-                        <td><a href="#" class="btn">View Details</a></td>
-                    </tr>
-                    <tr>
-                        <td>#1002</td>
-                        <td>2023-07-02</td>
-                        <td>$89.99</td>
-                        <td>Shipped</td>
-                        <td><a href="#" class="btn">Track Order</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section id="cart" style="display: none;">
-            <h2>Cart</h2>
-            <ul class="cart-items">
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                <li><a href="account.html"><i class="fa fa-user"></i></a></li>
             </ul>
-        </section>
-
-        <section id="settings" style="display: none;">
-            <h2>Settings</h2>
-            <form class="settings-form">
-                <div class="form-group">
-                    <label for="new-email">New Email:</label>
-                    <input type="email" id="new-email" name="new-email">
-                </div>
-                <div class="form-group">
-                    <label for="new-password">New Password:</label>
-                    <input type="password" id="new-password" name="new-password">
-                </div>
-                <button type="submit" class="btn">Save Changes</button>
-            </form>
-        </section>
+        </nav>
     </div>
 
+    <header>
+        <div>
+            <h1 style="color: black;">Sole<span style="color: orangered;">Haven</span></h1>
+        </div>
+        <div class="menu-bars">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+        </div>
+        <ul class="main-menu">
+            <li><a href="home.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Shop <span class="fa fa-angle-down"></span></a>
+                <ul class="submenu">
+                    <li><a href="#">Men's Shoes</a></li>
+                    <li><a href="#">Women's Shoes</a></li>
+                    <li><a href="#">Kids' Shoes</a></li>
+                    <li><a href="#">Unisex</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html"> About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Signup</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <div class="about-content">
+                <h2>About SoleHaven</h2>
+                <p>Welcome to SoleHaven, your ultimate destination for stylish and comfortable footwear. We are dedicated to providing our customers with a wide range of shoes that cater to every style and occasion.</p>
+                <p>At SoleHaven, we believe in quality, comfort, and fashion. Our collection includes the latest trends in sneakers, heels, boots, and more, sourced from leading brands worldwide.</p>
+                <p>Whether you're looking for casual everyday shoes or something special for a formal event, SoleHaven has something for everyone. Explore our collection online and step into style with SoleHaven!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SoleHaven. All rights reserved.</p>
+    </footer>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var hour = new Date().getHours();
-            var greeting = document.getElementById('greeting');
-            var name = 'John'; // Replace with the user's name fetched from backend
-            if (hour >= 5 && hour < 12) {
-                greeting.textContent = 'Hello! Good morning, ' + name + '!';
-            } else if (hour >= 12 && hour < 18) {
-                greeting.textContent = 'Hello! Good afternoon, ' + name + '!';
-            } else {
-                greeting.textContent = 'Hello! Good evening, ' + name + '!';
-            }
-        });
-
-        function showSection(sectionId) {
-            var sections = document.querySelectorAll('.account-container > section');
-            sections.forEach(function(section) {
-                section.style.display = 'none';
+        document.addEventListener("DOMContentLoaded", function() {
+            var menuBars = document.querySelector(".menu-bars");
+            menuBars.addEventListener("click", function() {
+                var mainMenu = document.querySelector(".main-menu");
+                mainMenu.classList.toggle("show-menu");
             });
-            document.getElementById(sectionId).style.display = 'block';
-        }
-
-        function previewImage(event) {
-            const reader = new FileReader();
-            reader.onload = function() {
-                const output = document.getElementById('profile-picture');
-                output.src = reader.result;
-            }
-            reader.readAsDataURL(event.target.files[0]);
-        }
+        });
     </script>
 </body>
 </html>

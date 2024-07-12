@@ -3,61 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop - SoleHaven</title>
-    <link rel="stylesheet" href="shop.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>About Us - SoleHaven Shoe Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="about.css">
 </head>
+<style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.logo span {
+    color: #ff6b6b;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.about-content {
+    margin-bottom: 2rem;
+}
+
+.store-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.our-promise ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.our-promise li {
+    margin-bottom: 0.5rem;
+}
+
+.our-promise i, .visit-us i {
+    color: #ff6b6b;
+    margin-right: 0.5rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.5rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('show');
+    });
+});
+</script>
 <body>
-    <!-- Header section -->
     <header>
-        <div class="top-bar">
-            <div class="search-bar">
-                <input type="text" placeholder="Search...">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="user-account">
-                <a href="#"><i class="fas fa-user"></i> My Account</a>
-                <a href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
-            </div>
-            <div class="cart">
-                <a href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
-            </div>
-        </div>
-        <h1>Shop Our Collection</h1>
+        <h1 class="logo">Sole<span>Haven</span></h1>
         <nav>
             <ul>
-                <li><a href="#">Men's Shoes</a></li>
-                <li><a href="#">Women's Shoes</a></li>
-                <li><a href="#">Kids' Shoes</a></li>
-                <li><a href="#">Sports Shoes</a></li>
-                <li><a href="#">Brands</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     </header>
-    
-    <!-- Main content section -->
-    <main>
-        <section class="product-list">
-            <div class="product">
-                <img src="shoe1.jpg" alt="Shoe 1">
-                <h3>Product Name</h3>
-                <p>1000</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="shoe2.jpg" alt="Shoe 2">
-                <h3>Product Name</h3>
-                <p>1999</p>
-                <button>Add to Cart</button>
-            </div>
-            <!-- Add more products here -->
+
+    <main class="about-container">
+        <h2>About SoleHaven</h2>
+        
+        <section class="about-content">
+            <img src="store-front.jpg" alt="SoleHaven Store Front" class="store-image">
+            <p>Welcome to SoleHaven, your one-stop shop for quality footwear. Established in 2010, we've been serving our community with the best selection of shoes for all occasions.</p>
+            <p>At SoleHaven, we believe that the right pair of shoes can make all the difference. That's why we offer a wide range of styles for men, women, and children, from casual sneakers to elegant formal shoes.</p>
+        </section>
+
+        <section class="our-promise">
+            <h3>Our Promise to You</h3>
+            <ul>
+                <li><i class="fas fa-check"></i> Quality shoes from trusted brands</li>
+                <li><i class="fas fa-check"></i> Excellent customer service</li>
+                <li><i class="fas fa-check"></i> Competitive prices</li>
+                <li><i class="fas fa-check"></i> Comfortable shopping experience</li>
+            </ul>
+        </section>
+
+        <section class="visit-us">
+            <h3>Visit Us</h3>
+            <p>We're located in the heart of downtown. Come visit us to try on our shoes and experience the SoleHaven difference!</p>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Nairobi, Kenya</p>
+            <p><i class="fas fa-clock"></i> Mon-Sat: 9am-6pm, Sun: 10am-4pm</p>
         </section>
     </main>
-    
-    <!-- Footer section -->
+
     <footer>
-        <p>&copy; 2024 SoleHaven. All rights reserved.</p>
+        <p>&copy; 2023 SoleHaven. All rights reserved.</p>
     </footer>
+
+    <script src="about.js"></script>
 </body>
 </html>
